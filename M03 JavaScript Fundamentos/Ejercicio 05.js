@@ -18,6 +18,7 @@ function esPositivo(num) {
       return false;
    }
 }
+// console.log(esPositivo(0))
 
 function agregarSimboloExclamacion(str) {
    // Agrega un símbolo de exclamación al final del string "str" y retórnalo
