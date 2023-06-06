@@ -27,6 +27,9 @@ function incrementarPorUno(array) {
       nuevoArray.push(array[i] + 1); 
    }
    return nuevoArray; 
+
+   //otra forma
+   //return array.map((element) => element + 1);
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -53,6 +56,8 @@ function dePalabrasAFrase(palabras) {
       return acumulador + " " + elemento;
    })
    return frase;
+   //otra solucion
+   return palabras.join(" ")
 }
 
 function arrayContiene(array, elemento) {
@@ -61,6 +66,8 @@ function arrayContiene(array, elemento) {
    // Tu código:
    if(array.includes (elemento)) return true;
    else return false;
+   //otra solucion
+   return array.includes(elemento);
 }
 
 function agregarNumeros(arrayOfNums) {
@@ -71,6 +78,8 @@ function agregarNumeros(arrayOfNums) {
       return acumulador + elemento;
    })
    return suma;
+   //otra solucion
+   return arrayOfNums.reduce((acum, next) => acum + next)
 }
 
 function promedioResultadosTest(resultadosTest) {
@@ -82,6 +91,8 @@ function promedioResultadosTest(resultadosTest) {
       promedio += resultadosTest[index];
    }
    return promedio/resultadosTest.length;
+   //otra solucion usando la funcion suma del ejer anterior
+   return agregarNumeros(resultadosTest) / resultadosTest.length
 }
 
 function numeroMasGrande(arrayOfNums) {
@@ -92,6 +103,10 @@ function numeroMasGrande(arrayOfNums) {
       return Math.max(a,b);
    },-Infinity);
    return max;
+   
+   //otra solucion
+   return Math.max(...arrayOfNums);
+   
 }
 
 function multiplicarArgumentos() {
@@ -103,6 +118,12 @@ function multiplicarArgumentos() {
    if(arguments.length === 1) return arguments[0];
    var producto = 1;
    for(var arg of arguments) producto *= arg;
+   return producto;
+   //otra solucion
+   var producto = 1;
+   for (var i = 0; i < arguments.length; i++) {
+      producto = producto * arguments[i]
+   }
    return producto;
 }
 
@@ -117,6 +138,15 @@ function cuentoElementos(array) {
       }
    }
    return contador;
+   //otra solucion
+   var count = 0;
+   array.forEach(element => {
+      if(element > 18) count ++;
+   });
+   return count;
+   //otra
+   var contador = array.filter((num)=> num > 18);
+   return contador.length;
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -125,7 +155,9 @@ function diaDeLaSemana(numeroDeDia) {
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
    if(numeroDeDia === 1 || numeroDeDia === 7) return "Es fin de semana";
-   else return "Es dia laboral";
+   /*else*/ return "Es dia laboral";
+   //el else ya no es necesario ya que al cunplir el primer retur se omite lo demas
+   
 }
 
 function empiezaConNueve(num) {
@@ -134,6 +166,8 @@ function empiezaConNueve(num) {
    // Tu código:
    if(Number.isInteger(num)) return num.toString().startsWith('9');
    else return false;
+   //otra solucion
+   return num.toString()[0]=== '9';
 }
 
 function todosIguales(array) {
@@ -145,6 +179,12 @@ function todosIguales(array) {
       if(array[i] !== comparar){
          return false;
       }
+   }
+   return true;
+   //otra forma
+   var aux = array[0];
+   for(const num of array){
+      if(element !== aux) return false
    }
    return true;
 }
@@ -166,6 +206,8 @@ function mesesDelAño(array) {
       return nuevoArreglo;
    }
    return "No se encontraron los meses pedidos";
+   //otra forma
+
 }
 
 function tablaDelSeis() {
@@ -174,6 +216,11 @@ function tablaDelSeis() {
    // Tu código:
    var tabla = [];
    for(var i = 0; i <= 10; i++){tabla.push(i * 6);} return tabla;
+   //otra forma
+   var resultado = [];
+   for (let i = 0; i < 10; i++) {
+       resultado.push(6 * i);
+   }
    
 }
 
@@ -182,6 +229,7 @@ function mayorACien(array) {
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
    return array.filter(elemento => elemento > 100);
+   //otra forma
 }
 
 /* ----------------------------------------------------------------------------------
