@@ -30,7 +30,7 @@ function sumarArray(arrayOfNumbers, cb) {
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
    const suma = arrayOfNumbers.reduce((a, b) => a + b);
-  cb(suma);
+   cb(suma);
 }
 
 function forEach(array, cb) {
@@ -38,9 +38,12 @@ function forEach(array, cb) {
    // Debes iterar sobre el arreglo, y por cada elemento ejecutar el callback.
    // Debes pasarle el elemento como argumento al callback.
    // Tu código:
-   for (let i = 0; i < array.length; i++) {
-      cb(array[i]);
-    }
+   // for (let i = 0; i < array.length; i++) {
+   //    cb(array[i]);
+   //  }
+
+    //otra forma
+    array.forEach(cb)
 }
 
 function map(array, cb) {
@@ -48,24 +51,28 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
-   const newArray = [];
-  for (let i = 0; i < array.length; i++) {
-    newArray.push(cb(array[i]));
-  }
-  return newArray;
+//    let newArray = [];
+//   for (let i = 0; i < array.length; i++) {
+//     newArray.push(cb(array[i]));
+//   }
+//   return newArray;
+      //otra forma
+      array.map(cb);
 }
 
 function filter(arrayOfStrings) {
    // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
-   const newArray = [];
-  for (let i = 0; i < arrayOfStrings.length; i++) {
-    if (arrayOfStrings[i][0] === "a") {
-      newArray.push(arrayOfStrings[i]);
-    }
-  }
-  return newArray;
+//    let newArray = [];
+//   for (let i = 0; i < arrayOfStrings.length; i++) {
+//     if (arrayOfStrings[i][0] === "a") {
+//       newArray.push(arrayOfStrings[i]);
+//     }
+//   }
+//   return newArray;
+   let nuevoArray = arrayOfStrings.filter(ele => ele[0].toLowerCase() === "a" )
+   return nuevoArray;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
